@@ -20,7 +20,8 @@
     <script src="{{ mix('js/app.js') }}" defer></script>
 </head>
 
-<body class="min-h-full font-sans antialiased">
+<body class="min-h-full font-sans antialiased" x-data="{ message: localStorage.getItem('theme') }"
+    x-init="$watch('message', (val) => localStorage.setItem('theme', val));">
     <div class="min-h-full bg-transparent">
         <livewire:navigation-menu />
         <main>

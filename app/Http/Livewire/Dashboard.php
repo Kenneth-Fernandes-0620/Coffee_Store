@@ -7,15 +7,15 @@ use Livewire\Component;
 class Dashboard extends Component
 {
     public $Theme = "light";
-    protected $listeners = ['switchTheme'=>'switchTheme'];
+    protected $listeners = ['dark' => 'switchDark', 'light' => 'switchLight'];
 
-    public function switchTheme()
+    public function switchDark()
     {
-        if ($this->Theme == "dark") {
-            $this->Theme = "light";
-        } else {
-            $this->Theme = "dark";
-        }
+        $this->Theme = "dark";
+    }
+    public function switchLight()
+    {
+        $this->Theme = "light";
     }
 
     public function render()
