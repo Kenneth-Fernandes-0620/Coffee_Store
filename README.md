@@ -1,3 +1,6 @@
+# Laravel Jetstream Assignment  
+### &emsp;&emsp; Done By: Kenneth Fernandes (RBCA19124)  
+***
 How to use:  
 &emsp;-First Install Composer:  
 &emsp;&emsp;On Windows, you can use the installer (.exe file)
