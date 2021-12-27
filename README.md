@@ -8,8 +8,6 @@ How to use:
 &emsp;-Open a terminal (Admin Mode preferred) in the _project Folder_ and  
 &emsp;&emsp;Install Jetstream:  
 &emsp;&emsp;&emsp;command is: **composer require laravel/jetstream**  
-&emsp;&emsp;Install Livewire package for Jetstream:  
-&emsp;&emsp;&emsp;command is: **php artisan jetstream:install livewire**  
 &emsp;&emsp;Install the Node Dependencies  
 &emsp;&emsp;&emsp;command is: **npm install**  
 &emsp;&emsp;Build the Dependencies in Development Mode:  
