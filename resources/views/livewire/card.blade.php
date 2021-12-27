@@ -1,22 +1,22 @@
-<div class="pt-0 md:pt-6 pb-6 rounded drop-shadow-lg shadow-xl transform transition duration-300 hover:scale-110 hover:bg-gray-100  dark:bg-gray-900 dark:hover:bg-black">
+<div class="pt-0 pb-6 transition duration-300 transform rounded shadow-xl md:pt-6 drop-shadow-lg hover:scale-110 hover:bg-gray-100 dark:bg-gray-900 dark:hover:bg-black">
     <a href="{{ url('/store')}}">
-        <div class="flex items-center flex-col">
-            <div class="max-w-md mx-auto bg-white rounded-md overflow-hidden md:max-w-2xl">
+        <div class="flex flex-col items-center">
+            <div class="max-w-md mx-auto overflow-hidden bg-white rounded-md md:max-w-2xl">
                 <div class="md:flex">
                     <div class="md:shrink-0 ">
-                        <img class="h-60 w-fit object-cover md:h-100 md:w-48 lg:w-fit border-2 border-gray-500 dark:border-white" src={{ $imagesrc }} alt={{ $heading }}>
+                        <img class="object-cover border-2 border-gray-500 h-60 w-fit md:h-100 md:w-48 lg:w-fit dark:border-white" src={{ $imagesrc }} alt={{ $heading }}>
                     </div>
                 </div>
             </div>
         </div>
         <div class="p-8">
-            <div class="uppercase tracking-wide font-bold text-center dark:text-white">{{ $heading }}</div>
+            <div class="font-bold tracking-wide text-center uppercase dark:text-white">{{ $heading }}</div>
         </div>
-        <div class="ml-12">
-            <div class=" text-sm text-gray-500 dark:text-white">
+        <div class="ml-12 mr-7">
+            <div class="text-sm text-gray-500 dark:text-white">
                 {{$description}}
             </div>
-            <div class="mt-3 flex items-center text-sm font-semibold text-indigo-700">
+            <div class="flex items-center mt-3 text-sm font-semibold text-indigo-700">
                 <div>Shop Now</div>
 
                 <div class="ml-1 text-indigo-500">

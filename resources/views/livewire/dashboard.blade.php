@@ -1,4 +1,4 @@
-<div class=" {{ $Theme }} m-0 p-0" x-init="$wire.Theme = message">
+<div class="p-0 m-0" :class="message">
     <div class="min-h-full py-11 dark:bg-gray-900">
         <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
             <div class="overflow-hidden bg-transparent shadow-xl sm:rounded-lg">

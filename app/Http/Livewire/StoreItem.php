@@ -15,6 +15,10 @@ class StoreItem extends Component
         $this->productCost = $product->product_cost;
     }
 
+    public function UpdateCart($count){
+        $this->emit('addToCart', $count);
+    }
+
     public function render()
     {
         return view('livewire.store-item');

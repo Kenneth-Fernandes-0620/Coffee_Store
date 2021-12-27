@@ -20,15 +20,17 @@
     <script src="{{ mix('js/app.js') }}" defer></script>
 </head>
 
-<body class="min-h-full font-sans antialiased" x-data="{ message: localStorage.getItem('theme') }"
-    x-init="$watch('message', (val) => localStorage.setItem('theme', val));">
-    <div class="min-h-full bg-transparent">
-        <livewire:navigation-menu />
-        <main>
-            {{ $slot }}
-        </main>
+<body class="font-sans antialiased" x-data="{ message: localStorage.getItem('theme'), 
+    cart : (localStorage.getItem('cart') == null) ? [] : JSON.parse(localStorage.getItem('cart')) }"
+    x-init="$watch('message', (val) => localStorage.setItem('theme', val)); $watch('cart',(val)=>localStorage.setItem('cart',JSON.stringify(val)));">
+    <div  :class="message">
+        <div class="min-h-screen bg-white dark:bg-gray-900">
+            <livewire:navigation-menu />
+            <main>
+                {{ $slot }}
+            </main>
+        </div>
     </div>
-
     @stack('modals')
     @livewireScripts
 </body>

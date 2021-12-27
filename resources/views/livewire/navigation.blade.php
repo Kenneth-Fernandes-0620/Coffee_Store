@@ -1,11 +1,10 @@
-<div class="{{ $Theme }}" x-init="$wire.Theme = message">
+<div :class="message">
     <nav x-data="{ open: false }" class="bg-white border-b border-gray-100 dark:bg-gray-900 dark:border-black">
         <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8 dark:bg-gray-900">
             <div class="flex justify-between h-16">
                 <div class="flex">
                     <!-- Logo -->
-                    <div class="flex items-center shrink-0"
-                        x-on:click="message = (message == 'dark')?'light':'dark'; $wire.emit(message);">
+                    <div class="flex items-center shrink-0" x-on:click="message = (message == 'dark')?'light':'dark'">
                         <a>
                             <x-jet-application-mark class="block w-auto h-9 dark:h-0 dark:w-0" fill="#000" />
                             <x-jet-application-mark class="block w-0 h-0 dark:h-9 dark:w-auto" fill="#fff" />
@@ -25,7 +24,9 @@
                         </x-jet-nav-link>
                     </div>
                 </div>
+
                 <div class="hidden sm:flex sm:items-center sm:ml-6">
+                    <livewire:cart-icon />
                     <!-- Settings Dropdown -->
                     <div class="relative ml-3">
                         <x-jet-dropdown align="right" width="48" class="bg-white dark:bg-gray-700">
@@ -77,7 +78,9 @@
                         </x-jet-dropdown>
                     </div>
                 </div>
-
+                <div class="sm:flex md:hidden">
+                    <livewire:cart-icon />
+                </div>
                 <!-- Hamburger -->
                 <div class="flex items-center -mr-2 sm:hidden">
                     <button @click="open = ! open"
@@ -101,6 +104,9 @@
                 <x-jet-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                     {{ __('Dashboard') }}
                 </x-jet-responsive-nav-link>
+                <x-jet-responsive-nav-link href="{{ route('store') }}" :active="request()->routeIs('store')">
+                    {{ __('Store') }}
+                </x-jet-responsive-nav-link>
             </div>
 
             <!-- Responsive Settings Options -->
@@ -113,15 +119,15 @@
                         </div>
                     @endif
                     <div>
-                        <div class="text-base font-medium text-gray-800">{{ Auth::user()->name }}</div>
-                        <div class="text-sm font-medium text-gray-500">{{ Auth::user()->email }}</div>
+                        <div class="text-base font-medium text-gray-800 dark:text-white">{{ Auth::user()->name }}</div>
+                        <div class="text-sm font-medium text-gray-500 dark:text-white">{{ Auth::user()->email }}</div>
                     </div>
                 </div>
 
                 <div class="mt-3 space-y-1">
                     <!-- Account Management -->
                     <x-jet-responsive-nav-link href="{{ route('profile.show') }}"
-                        :active="request()->routeIs('profile.show')" class="bg-white dark:bg-gray-700">
+                        :active="request()->routeIs('profile.show')" class="bg-white dark:bg-gray-900">
                         {{ __('Profile') }}
                     </x-jet-responsive-nav-link>
 
